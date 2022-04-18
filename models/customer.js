@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
-// Model danych, potrzebne żeby można było wysyłać requesty
 
 const customerSchema = new mongoose.Schema({
     isGold: {
@@ -26,7 +25,6 @@ const customerSchema = new mongoose.Schema({
 
 const Customer = mongoose.model('Customer', customerSchema);
 
-// biblioteka do walidacji ciała requestu, można się obejść bez niej więc możesz tego nie używać
 
 function validate(customer) {
     const schema = Joi.object({
